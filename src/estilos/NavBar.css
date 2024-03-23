@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.logo, .cart {
+    font-size: 1.5em;
+}
+
+.categories button {
+    margin: 0 10px;
+    padding: 5px 10px;
+}
