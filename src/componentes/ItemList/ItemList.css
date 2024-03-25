@@ -1,0 +1,24 @@
+
+/* ItemList.css */
+.ListGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.ListGroup::after {
+    content: '';
+    flex: auto;
+}
+
+.ListGroup .CardItem {
+    width: calc(33.333% - 20px); /* Tamaño de cada ItemDetail (el 20px es para el espacio entre elementos) */
+    margin-bottom: 20px; /* Espacio inferior entre los ItemDetail */
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Evita que el contenido sobresalga */
+}

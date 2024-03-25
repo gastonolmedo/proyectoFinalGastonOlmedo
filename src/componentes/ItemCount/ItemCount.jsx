@@ -1,5 +1,6 @@
 import './ItemCount.css'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [quantity, setQuantity] = useState(initial)
@@ -25,11 +26,19 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button className='Button' onClick={increment}>+</button>
             </div>
             <div>
-            <button className='Button' onClick={()=> onAdd(quantity)} disabled={!stock}>
+            {/* <button className='Button' onClick={()=> onAdd(quantity)} disabled={!stock}>
                 Agregar al carrito
-            </button>
+            </button> */}
+            <Link to='/Cart' className='Option'>
+                <button className='Button' onClick={()=> onAdd(quantity)} disabled={!stock}>
+                    Agregar al carrito
+                </button>
+            </Link>
             </div>
         </div>
     )
 }
 export default ItemCount
+
+
+

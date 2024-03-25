@@ -1,17 +1,40 @@
-.navbar {
+/* NavBar.css */
+nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+    justify-content: space-between;
+    padding: 10px 5%; /* Puedes ajustar el padding si necesitas más espacio alrededor del contenido */
+    width: 100%; /* Asegura que el navbar ocupe todo el ancho de la pantalla */
+    background-color: #ffffff; /* Fondo blanco, puedes cambiarlo por cualquier color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
-.logo, .cart {
-    font-size: 1.5em;
+.logo {
+    height: 80px; /* Incrementamos el tamaño del logo */
 }
 
-.categories button {
-    margin: 0 10px;
-    padding: 5px 10px;
+nav a {
+    text-decoration: none;
+    color: inherit;
 }
+
+.btn-outline-dark {
+    padding: 5px 10px; /* Reducimos el padding para hacer los botones más pequeños */
+    margin: 0 5px; /* Reducimos el margen para que los botones estén más juntos */
+    border-color: #007bff;
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover, .btn-outline-dark:focus {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Estilo específico para el widget del carrito de compras */
+.card-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

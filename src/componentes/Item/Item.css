@@ -1,37 +1,58 @@
+/* Item.css */
 .CardItem {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 200px;
-  }
-  
-  .CardItem img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .CardItem h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .CardItem p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .CardItem button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .CardItem button:hover {
-    background-color: #0056b3;
-  }
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  margin-bottom: 20px; /* Espacio entre cada tarjeta */
+  border: 1px solid #ddd; /* Borde para la tarjeta */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Evita que el contenido sobresalga */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinear contenido al centro */
+}
+
+.CardItem .Header {
+  padding: 20px;
+  background-color: #f9f9f9; /* Color de fondo para la cabecera */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+  text-align: center; /* Centrar el texto */
+}
+
+.CardItem .ItemHeader {
+  margin: 0;
+  font-size: 20px; /* Tamaño del título */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+.CardItem .ItemPicture {
+  width: 100%;
+  height: 200px; /* Altura fija para todas las imágenes */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden; /* Evitar que las imágenes se desborden */
+  display: flex; /* Utilizar flexbox */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+.CardItem .ItemPicture img {
+  max-width: 100%;
+  max-height: 100%; /* Ajustar la altura al 100% del contenedor */
+  object-fit: contain; /* Ajustar la imagen manteniendo la relación de aspecto */
+}
+
+.CardItem .Info {
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 0;
+  font-size: 16px; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+.CardItem .ItemFooter {
+  padding: 10px 20px;
+  text-align: center; /* Centrar el botón */
+  background-color: #f9f9f9; /* Color de fondo para el pie de la tarjeta */
+  border-top: 1px solid #ddd; /* Borde superior */
+}

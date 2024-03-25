@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #fff; /* Color de fondo del navbar */
+    border-bottom: 1px solid #ccc; /* Borde inferior del navbar */
+    padding: 10px 20px; /* Espaciado interno del navbar */
+    display: flex; /* Mostrar elementos en línea */
+    justify-content: space-between; /* Alinear elementos horizontalmente */
+    align-items: center; /* Alinear elementos verticalmente */
+  }
+  
+  /* Estilos del logo */
+  .navbar-logo {
+    font-size: 24px; /* Tamaño de la fuente del logo */
+    color: #333; /* Color del texto del logo */
+    text-decoration: none; /* Quitar subrayado del texto */
+  }
+  
+  /* Estilos de la navegación */
+  .navbar-nav {
+    list-style: none; /* Quitar viñetas de la lista */
+    display: flex; /* Mostrar elementos en línea */
+  }
+  
+  .navbar-nav li {
+    margin-right: 20px; /* Espaciado entre elementos de la lista */
+  }
+  
+  .navbar-nav li a {
+    color: #333; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    transition: color 0.3s ease; /* Transición suave del color del texto */
+  }
+  
+  .navbar-nav li a:hover {
+    color: #007bff; /* Cambiar color del texto al pasar el cursor sobre el enlace */
+  }

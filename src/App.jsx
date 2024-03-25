@@ -1,39 +1,30 @@
-import './App.css'
-import './estilos/NavBar.css'
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './componentes/NavBar/NavBar'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
-import ItemCount from './componentes/ItemCount/ItemCount'
-// import ItemCount from './componentes/ItemCount/ItemCount'
-//import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
+import Cart from './componentes/Cart/Cart'
+import { CartProvider } from './context/CartContext'
+import CheckOut from './componentes/CheckOut/CheckOut'
 
-function App() {
-  
-  return (
-    
-      <div>
-        <NavBar></NavBar>
-        <ItemListContainer greeting={'Bienvenidos'}></ItemListContainer>
-        <ItemCount stock={10} initial ={1} onAdd={(quantity) => console.log('Cantidad agregada ',quantity)}></ItemCount>
-        <ItemDetailContainer></ItemDetailContainer> 
-        {/* <BrowserRouter>        
-          <NavBar/>
-          <Routes>
-            <Route path='/' element={<ItemListContainer />}/>
-            {/* <Route path='/category/:categoryId' element={<ItemListContainer />}/> */}
-            {/* <Route path='/item/:Id' element={<ItemDetailContainer />}/>
-            <Route path='*' element={<h1>404 NOT FOUND</h1>}/> */}
-          {/* </Routes> */}
-          {/* <ItemListContainer greeting={'Bienvenidos'} />
-          <ItemCount stock={10} initial ={1} onAdd={(quantity) => console.log('Cantidad agregada ',quantity)} />
-          <ItemDetailContainer></ItemDetailContainer> */}
-      {/* </BrowserRouter> */} 
 
-    </div>
-    
-    
-  )
-}
 
+const App = () => {
+  return(
+    
+    <CartProvider>
+    <BrowserRouter>
+      <NavBar></NavBar>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:category" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+      </Routes>
+    </BrowserRouter>
+    </CartProvider>
+    
+  );  
+};
 export default App

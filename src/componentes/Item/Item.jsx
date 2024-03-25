@@ -9,7 +9,7 @@ const Item = ({id, name, img, price, stock})=> {
                     {name}
                 </h2>
             </header>
-            <picture>
+            <picture className='ItemPicture'>
                 <img src={img} alt={name} className="ItemImg"></img>
             </picture>
             <section>
@@ -21,12 +21,12 @@ const Item = ({id, name, img, price, stock})=> {
                 </p>   
             </section>
             <footer className="ItemFooter">
-                <Link to='/Item/${id}' > Ver Detalle </Link>
-                {/* <link to={'/item/${id}'} className='Option'>Ver Detalle</link> */}
-                <button className="Option">Ver Detalle</button>
+                 {/* <Link to='/Item/${id}' > Ver Detalle </Link>  */}
+                 <Link to={`/item/${id}`} className='Option'>Ver Detalle</Link>
+               
             </footer>
         </article>
 
-)
+    )
 }
 export default Item

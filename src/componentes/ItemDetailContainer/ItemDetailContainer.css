@@ -1,0 +1,10 @@
+/* ItemDetailContainer.css */
+.ItemDetailContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centrar en la pantalla */
+    background-color: #f0f0f0; /* Color de fondo */
+}
+
+

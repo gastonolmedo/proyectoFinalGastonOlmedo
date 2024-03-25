@@ -1,37 +1,42 @@
-.CardItem {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 200px;
-  }
-  
-  .CardItem img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .CardItem h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .CardItem p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .CardItem button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .CardItem button:hover {
-    background-color: #0056b3;
-  }
+/* ItemDetail.css */
+.ItemDetail {
+  width: 80%; /* Ancho del detalle del producto */
+  max-width: 600px; /* Ancho máximo */
+  padding: 20px; /* Espaciado interno */
+  background-color: #ffffff; /* Color de fondo */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.ItemDetail .Header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+  text-align: center; /* Centrar el texto */
+}
+
+.ItemDetail .ItemHeader {
+  margin: 0;
+  font-size: 24px; /* Tamaño del título */
+  color: #333; /* Color del texto */
+}
+
+.ItemDetail .ItemPicture {
+  width: 100%;
+  height: auto; /* Altura automática */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.ItemDetail .Info {
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 0;
+  font-size: 16px; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+.ItemDetail .ItemFooter {
+  padding: 10px 20px;
+  text-align: center; /* Centrar el botón */
+  background-color: #f9f9f9; /* Color de fondo para el pie de la tarjeta */
+  border-top: 1px solid #ddd; /* Borde superior */
+}

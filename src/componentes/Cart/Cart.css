@@ -1,0 +1,33 @@
+/* Cart.css */
+
+.cart-summary {
+    display: flex;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+.cart-summary p {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.cart-summary .clear-cart-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.checkout-link {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    text-decoration: none; /* Quitamos la subrayado del link */
+    cursor: pointer;
+    width: calc(100% - 2rem); /* Utilizamos calc para restar el padding */
+    text-align: center; /* Centramos el texto horizontalmente */
+    margin: 1rem; /* Agregamos un margen para separar el botón del borde */
+}

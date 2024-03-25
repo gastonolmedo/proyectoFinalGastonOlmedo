@@ -1,29 +1,50 @@
-import { useState, useEffect } from "react"
-import { getProducts } from '../../asyncMock'
-import ItemList from '../ItemList/ItemList'
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import ItemList from '../ItemList/ItemList';
+import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
 
-const ItemListContainer =({ greeting }) =>{
-    const [products, setProducts] = useState([])
-     const { categoryId } = useParams()
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const { category } = useParams();
 
-     useEffect(() => {
-       const asyncFunc = categoryId ? getProductsByCategory : getProducts
-         asyncFunc(categoryId)
-            getProducts()
-             .then(response =>{
-                 setProducts(response)
-             })
-             .catch(error =>{
-                 console.error(error)
-             })
-     },[])
+    const getProductsDB = (category) => {
+        let myProducts = collection(db, "products");
 
-    return(
-        <div>
-            <h1>{greeting}</h1>
-            <ItemList products={products}></ItemList>
-        </div>
-    )
-}
-export default ItemListContainer
+        // Si se proporciona una categoría, agregamos un filtro a la consulta
+        if (category) {
+            myProducts = query(myProducts, where("category", "==", category));
+        }
+
+        getDocs(myProducts)
+            .then((querySnapshot) => {
+                const productList = [];
+                querySnapshot.forEach((doc) => {
+                    productList.push({
+                        id: doc.id,
+                        ...doc.data()
+                    });
+                });
+                setProducts(productList);
+                setIsLoading(false); // Ahora que hemos cargado los productos, actualizamos el estado isLoading a false
+            })
+            .catch((error) => {
+                console.error("Error fetching products:", error);
+                setIsLoading(false); // En caso de error, también actualizamos el estado isLoading a false
+            });
+    };
+
+    useEffect(() => {
+        setIsLoading(true);
+        getProductsDB(category); // Pasamos la categoría al llamar a la función getProductsDB
+    }, [category]);
+
+    return (
+        <>
+            {isLoading ? <h2>Cargando productos...</h2> : <ItemList products={products} />}
+        </>
+    );
+};
+
+export default ItemListContainer;
